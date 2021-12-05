@@ -1,0 +1,1087 @@
+Image name:  Final_Dataset\Antegria_City.jpg
+Country:  Antegria
+Name:  Rasmussen, Nils
+Entry Name:  NILS RASMUSSEN
+DOB:  1940.09.13
+ISS:  Vedor
+Date:  1984.07.12
+Entry Date:  1983.01.25
+Num:  2BS81-GV7WG
+Entry Num:  2BS81-GV7WG
+Entry Reason:  WORK
+Score to entry seal 1:  0.907171214845654
+Score to entry seal 2:  0.5166990717038258
+Final: False
+
+
+Image name:  Final_Dataset\Antegria_EDate.jpg
+Country:  Antegria
+Name:  Palaka, Anna
+Entry Name:  ANNA PALAKA
+DOB:  1942.03.15
+ISS:  Glorian
+Date:  1984.09.04
+Entry Date:  1982.12.20
+Num:  NQg82-58RH8
+Entry Num:  NQg82-58RH8
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.9558536484897374
+Score to entry seal 2:  0.513141098235509
+Final: False
+
+
+Image name:  Final_Dataset\Antegria_PDate.jpg
+Country:  Antegria
+Name:  Markic, Elena
+Entry Name:  ELENA MARKIC
+DOB:  1948.02.07
+ISS:  Glorian
+Date:  1982.12.04
+Entry Date:  1983.01.24
+Num:  4EFHV-017WW
+Entry Num:  4EFHV-017WW
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5486220569479999
+Score to entry seal 2:  0.8868839455570834
+Final: False
+
+
+Image name:  Final_Dataset\Antegria_Seal_1.jpg
+Country:  Antegria
+Name:  Tilovna, Helga
+Entry Name:  HELGA TILOVNA
+DOB:  1955.11.25
+ISS:  St. Marmero
+Date:  1983.09.20
+Entry Date:  1983.01.21
+Num:  B7KR5-FOM8D
+Entry Num:  B7KR5-FOM8D
+Entry Reason:  VISIT
+Final: False
+
+
+Image name:  Final_Dataset\Arstotzka_BDate_1.jpg
+Country:  Arstotzka
+INABAVSKA, FRAN
+Name:  Inabavska, Fran
+ID Name:  INABAVSKA, FRAN
+DOB:  1945.04.20
+ID DOB:  1949.08.15
+ISS:  East Grestin
+ID District:  WOZENFIELD DISTRICT
+Date:  1983.09.02
+Num:  TR8JM-5134J
+Final: False
+
+
+Image name:  Final_Dataset\Correct_Antegria_1 (2).jpg
+Country:  Antegria
+Name:  Ermakov, Leonid
+Entry Name:  LEONID ERMAKOV
+DOB:  1952.01.01
+ISS:  St. Marmero
+Date:  1983.07.31
+Entry Date:  1983.01.20
+Num:  07DUN-HUULD
+Entry Num:  07DUN-HUULD
+Entry Reason:  VISIT
+Score to entry seal 1:  0.9488678037855655
+Score to entry seal 2:  0.5168670358676903
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Antegria_1.jpg
+Country:  Antegria
+Name:  Conway, Layl
+Entry Name:  LAYL CONWAY
+DOB:  1953.05.28
+ISS:  Outer Grouse
+Date:  1983.09.27
+Entry Date:  1983.01.18
+Num:  18SAS-7VGD7
+Entry Num:  18SAS-7VGD7
+Entry Reason:  VISIT
+Score to entry seal 1:  0.912974076462333
+Score to entry seal 2:  0.5184452306581321
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Antegria_2 (2).jpg
+Country:  Antegria
+Name:  Drury, Alex
+Entry Name:  ALEX DRURY
+DOB:  1959.10.20
+ISS:  St. Marmero
+Date:  1984.08.25
+Entry Date:  1983.01.18
+Num:  XSQLT-CDAOS
+Entry Num:  XSQLT-CDAOS
+Entry Reason:  WORK
+Score to entry seal 1:  0.5413080907393585
+Score to entry seal 2:  0.9020769728340231
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Antegria_2.jpg
+Country:  Antegria
+Name:  Bernard, Julia
+Entry Name:  JULIA BERNARD
+DOB:  1934.05.27
+ISS:  St. Marmero
+Date:  1983.08.31
+Entry Date:  1983.01.18
+Num:  DAPOQ-L0891
+Entry Num:  DAPOQ-L0891
+Entry Reason:  VISIT
+Score to entry seal 1:  0.952253374726162
+Score to entry seal 2:  0.5141909028089864
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Arstotzka_1.jpg
+Country:  Arstotzka
+BRAND, PATRICK
+Name:  Brand, Patrick
+ID Name:  BRAND, PATRICK
+DOB:  1947.05.27
+ID DOB:  1947.05.27
+ISS:  Paradizna
+ID District:  WOZENFIELD DISTRICT
+Date:  1984.02.20
+Num:  7F88A-5K3F3
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Arstotzka_2.jpg
+Country:  Arstotzka
+NYSTROEM, SIMOR
+Name:  Nystroem, Simor
+ID Name:  NYSTROEM, SIMOR
+DOB:  1945.03.14
+ID DOB:  1945.03.14
+ISS:  East Grestin
+ID District:  FARDESTO DISTRICT
+Date:  1984.07.31
+Num:  FE220-V21F4
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Arstotzka_3.jpg
+Country:  Arstotzka
+OCHAKOVSKA,  ELEANOR
+Name:  Ochakovska, Eleanor
+ID Name:  OCHAKOVSKA,  ELEANOR
+DOB:  1938.04.20
+ID DOB:  1936.04.20
+ISS:  Paradizna
+ID District:  OCTOVALIS DISTRICT
+Date:  1984.08.03
+Num:  BXSVA-22UCG
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Arstotzka_4.jpg
+Country:  Arstotzka
+JZAKOEV, DANIEL
+Name:  Jzakoev, Daniel
+ID Name:  JZAKOEV, DANIEL
+DOB:  1931.04.20
+ID DOB:  1931.04.20
+ISS:  East Grestin
+ID District:  FARDESTO DISTRICT
+Date:  1984.01.31
+Num:  AGHJ4-G7N5B
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Arstotzka_5.jpg
+Country:  Arstotzka
+WEIS, MATTHEW
+Name:  Weis, Matthew
+ID Name:  WEIS, MATTHEW
+DOB:  1941.08.07
+ID DOB:  1941.08.07
+ISS:  East Grestin
+ID District:  LENDIFORMA DISTRICT
+Date:  1984.11.19
+Num:  A8P8N-302S1
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Arstotzka_6.jpg
+Country:  Arstotzka
+MAHRIC, BRUNO
+Name:  Mahric, Bruno
+ID Name:  MAHRIC, BRUNO
+DOB:  1938.07.02
+ID DOB:  1938.07.02
+ISS:  Paradizna
+ID District:  LENDIFORMA DISTRICT
+Date:  1984.08.12
+Num:  RTP8KW-05FF
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Impor_1 (2).jpg
+Country:  Impor
+Name:  Coda, Matteo
+Entry Name:  MATTEO CODA
+DOB:  1941.08.07
+ISS:  Haihan
+Date:  1984.10.01
+Entry Date:  1983.01.14
+Num:  7JBQP-B88S1
+Entry Num:  7JBQP-B88S1
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5357637243625317
+Score to entry seal 2:  0.9088267323396855
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Impor_1.jpg
+Country:  Impor
+Name:  Rantala, Jukka
+Entry Name:  JUKKA RANTALA
+DOB:  1947.03.15
+ISS:  Haihan
+Date:  1983.09.20
+Entry Date:  1983.01.15
+Num:  DXLMM-ANWPW
+Entry Num:  DXLMM-ANWPW
+Entry Reason:  VISIT
+Score to entry seal 1:  0.538366709250055
+Score to entry seal 2:  0.8927740222197924
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Impor_2.jpg
+Country:  Impor
+Name:  Fries, Maria
+Entry Name:  MARIA FRIES
+DOB:  1983.04.20
+ISS:  Haihan
+Date:  1983.05.02
+Entry Date:  1983.01.20
+Num:  S51CU-BCTKG
+Entry Num:  S51CU-BCTKG
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.5551949098507969
+Score to entry seal 2:  0.8796715739715556
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Kolechia_1 (2).jpg
+Country:  Kolechia
+Name:  Hvid, Erik
+Entry Name:  ERIK HVID
+DOB:  1949.09.13
+ISS:  Vedor
+Date:  1984.12.12
+Entry Date:  1983.01.14
+Num:  8LSNQ-SWUME
+Entry Num:  8LSNQ-SWUME
+Entry Reason:  IMMIGRATE
+Score to entry seal 1:  0.5548776001786908
+Score to entry seal 2:  0.8808678317517523
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Kolechia_1.jpg
+Country:  Kolechia
+Name:  Langbach, Nikolas
+Entry Name:  NIKOLAS LANGBACH
+DOB:  1945.02.08
+ISS:  West Grestin
+Date:  1984.08.13
+Entry Date:  1983.01.15
+Num:  XJKE8-8WP24
+Entry Num:  XJKE8-8WP24
+Entry Reason:  VISIT
+Score to entry seal 1:  0.9431298514318635
+Score to entry seal 2:  0.5147099036604571
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Kolechia_2 (2).jpg
+Country:  Kolechia
+Name:  Deboer, David
+Entry Name:  DAVID DEBOER
+DOB:  1948.05.27
+ISS:  West Grestin
+Date:  1983.08.08
+Entry Date:  1983.01.29
+Num:  PG2CD-1PHVP
+Entry Num:  PG2CD-1PHVP
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.5530394269970799
+Score to entry seal 2:  0.8893420236811694
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Kolechia_2.jpg
+Country:  Kolechia
+Name:  Matusoiu, Teodor
+Entry Name:  TEODOR MATUSOIU
+DOB:  -1-9548.11.25
+ISS:  Yurko City
+Date:  1984.01.19
+Entry Date:  1983.01.30
+Num:  NEXKO-FBVV3
+Entry Num:  NEXKO-FBVV3
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.9050619183324636
+Score to entry seal 2:  0.507421708956871
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Kolechia_3.jpg
+Country:  Kolechia
+Name:  Schwaberow, Hans
+Entry Name:  HANS SCHWABEROW
+DOB:  1-8651.10.20
+ISS:  Vedor
+Date:  1983.08.28
+Entry Date:  1983.01.21
+Num:  LJJH9-0XEHF
+Entry Num:  LJJH9-0XEHF
+Entry Reason:  IMMIGRATE
+Score to entry seal 1:  0.9422520270722954
+Score to entry seal 2:  0.5162542973261328
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Orbristan_1 (2).jpg
+Country:  Orbristan
+Name:  Kurdatseva, Alina
+Entry Name:  ALINA KURDATSEVA
+DOB:  1982.07.02
+ISS:  Lorndaz
+Date:  1983.12.01
+Entry Date:  1983.01.12
+Num:  GNNLW-1BR42
+Entry Num:  GNNLW-1BR42
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5382271597759891
+Score to entry seal 2:  0.9090673590645252
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Orbristan_1.jpg
+Country:  Orbristan
+Name:  Silvovska, Greta
+Entry Name:  GRETA SILVOVSKA
+DOB:  1948.12.31
+ISS:  Mergerous
+Date:  1983.09.29
+Entry Date:  1983.01.11
+Num:  9KBQQ-0TCKJ
+Entry Num:  9KBQQ-0TCKJ
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.9523642815953389
+Score to entry seal 2:  0.5173279775874177
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Orbristan_2 (2).jpg
+Country:  Orbristan
+Name:  Sheridan, Cutler
+Entry Name:  CUTLER SHERIDAN
+DOB:  1951.03.15
+ISS:  Lorndaz
+Date:  1983.11.07
+Entry Date:  1983.01.29
+Num:  A4X38-NJ8RE
+Entry Num:  A4X38-NJ8RE
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5408012521306687
+Score to entry seal 2:  0.9058520564953617
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Orbristan_2.jpg
+Country:  Orbristan
+Name:  Kafkovna, Alexa
+Entry Name:  ALEXA KAFKOVNA
+DOB:  1957.08.07
+ISS:  Skal
+Date:  1983.05.27
+Entry Date:  1983.01.15
+Num:  HRQQ1-0CV34
+Entry Num:  HRQQ1-0CV34
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5521310321178531
+Score to entry seal 2:  0.8872650717293926
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Orbristan_3.jpg
+Country:  Orbristan
+Name:  Guang, Claire
+Entry Name:  CLAIRE GUANG
+DOB:  1958.08.08
+ISS:  Mergerous
+Date:  1983.11.08
+Entry Date:  1983.01.20
+Num:  XHGQG-RKSN1
+Entry Num:  XHGQG-RKSN1
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.5457687931531237
+Score to entry seal 2:  0.889477537599816
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Republia_1 (2).jpg
+Country:  Republia
+Name:  Shubeck, Aric
+Entry Name:  ARIC SHUBECK
+DOB:  1948.11.25
+ISS:  Lesrenadi
+Date:  1983.12.15
+Entry Date:  1983.01.21
+Num:  QJ2GN-B5U8M
+Entry Num:  QJ2GN-B5U8M
+Entry Reason:  WORK
+Score to entry seal 1:  0.5547140575510141
+Score to entry seal 2:  0.8729447960084963
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Republia_1.jpg
+Country:  Republia
+Name:  Fujisawa, Nabi
+Entry Name:  NABI FUJISAWA
+DOB:  1935.09.14
+ISS:  Lesrenadi
+Date:  1983.11.30
+Entry Date:  1983.01.21
+Num:  GFE8L-R8KHP
+Entry Num:  GFE8L-R8KHP
+Entry Reason:  VISIT
+Score to entry seal 1:  0.9204445966571243
+Score to entry seal 2:  0.5220073430692905
+Final: True
+
+
+Image name:  Final_Dataset\Correct_Republia_2.jpg
+Country:  Republia
+Name:  Diaz, Niveka
+Entry Name:  NIVEKA DIAZ
+DOB:  1948.02.07
+ISS:  True Glorian
+Date:  1984.08.25
+Entry Date:  1983.01.28
+Num:  W7TA5-GGA8W
+Entry Num:  W7TA5-GGA8W
+Entry Reason:  WORK
+Score to entry seal 1:  0.9170306126896903
+Score to entry seal 2:  0.5152088504512241
+Final: True
+
+
+Image name:  Final_Dataset\Correct_UF_1 (2).jpg
+Country:  UF
+Name:  Hansen, Sasha
+Entry Name:  SASHA HANSEN
+DOB:  1940.01.01
+ISS:  Great Rapid
+Date:  1984.05.10
+Entry Date:  1983.01.14
+Num:  SRS2N-GDUSH
+Entry Num:  SRS2N-GDUSH
+Entry Reason:  VISIT
+Score to entry seal 1:  0.948190670851991
+Score to entry seal 2:  0.5166103162683102
+Final: True
+
+
+Image name:  Final_Dataset\Correct_UF_1.jpg
+Country:  UF
+Name:  Cizadlo, Alana
+Entry Name:  ALANA CIZADLO
+DOB:  1928.08.07
+ISS:  Great Rapid
+Date:  1983.05.10
+Entry Date:  1983.01.29
+Num:  72X18-2JWX8
+Entry Num:  72X18-2JWX8
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5477455145144907
+Score to entry seal 2:  0.8860600296900476
+Final: True
+
+
+Image name:  Final_Dataset\Correct_UF_2 (2).jpg
+Country:  UF
+Name:  Miceli, Nadja
+Entry Name:  NADJA MICELI
+DOB:  1948.09.13
+ISS:  Great Rapid
+Date:  1984.04.11
+Entry Date:  1983.01.24
+Num:  DDJWO-J9DET
+Entry Num:  DDJWO-J9DET
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.9528905811023068
+Score to entry seal 2:  0.5231228228245455
+Final: True
+
+
+Image name:  Final_Dataset\Correct_UF_2.jpg
+Country:  UF
+Name:  Kulkarn, Anandis
+Entry Name:  ANANDIS KULKARN
+DOB:  -1-932.02.07
+ISS:  Korista City
+Date:  1984.12.18,
+Entry Date:  1983.01.22
+Num:  DW05X-TEELK
+Entry Num:  DW05X-TEELK
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.5391200235066826
+Score to entry seal 2:  0.9045834223019763
+Final: True
+
+
+Image name:  Final_Dataset\Correct_UF_3.jpg
+Country:  UF
+Name:  Fedoruk, Caroline
+Entry Name:  CAROLINE FEDORUK
+DOB:  --17945.07.02
+ISS:  Great Rapid
+Date:  1984.09.14
+Entry Date:  1983.01.13
+Num:  5RE71-FH7K5
+Entry Num:  5RE71-FH7K5
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5359901283501152
+Score to entry seal 2:  0.9081917799398002
+Final: True
+
+
+Image name:  Final_Dataset\Import_City.jpg
+Country:  Impor
+Name:  Alavod, Milena
+Entry Name:  MILENA ALAVOD
+DOB:  1924.02.07
+ISS:  Shingleton
+Date:  1984-.10.21
+Entry Date:  1983.01.28
+Num:  8W8DJ-XLXMF
+Entry Num:  8W8DJ-XLXMF
+Entry Reason:  WORK
+Score to entry seal 1:  0.9567705547976519
+Score to entry seal 2:  0.5177318794671272
+Final: False
+
+
+Image name:  Final_Dataset\Import_PDate.jpg
+Country:  Impor
+Name:  Haapakoski, Niko
+Entry Name:  NIKO HAAPAKOSKI
+DOB:  1935.07.02
+ISS:  Enkyo
+Date:  1982.12.15
+Entry Date:  1983.01.18
+Num:  88J5G-5JWTE
+Entry Num:  88J5G-5JWTE
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5520923686024939
+Score to entry seal 2:  0.8883788840034601
+Final: False
+
+
+Image name:  Final_Dataset\Impor_City.jpg
+Country:  Impor
+Name:  Markic, Elena
+Entry Name:  ELENA MARKIC
+DOB:  1937.11.25
+ISS:  Glorian
+Date:  1984.08.18
+Entry Date:  1983.01.20
+Num:  X2N1K-TNVVD
+Entry Num:  X2N1K-TNVVD
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5453036519315551
+Score to entry seal 2:  0.8792452100705469
+Final: False
+
+
+Image name:  Final_Dataset\Impor_Edate_1.jpg
+Country:  Impor
+Name:  Brooks, Mattias
+Entry Name:  MATTIAS BROOKS
+DOB:  1927.02.08
+ISS:  Haihan
+Date:  1983.08.11
+Entry Date:  1982.12.18
+Num:  1X71K-RJ9FD
+Entry Num:  1X71K-RJ9FD
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5402975735058039
+Score to entry seal 2:  0.9113063237411837
+Final: False
+
+
+Image name:  Final_Dataset\Impor_Name.jpg
+Country:  Impor
+Name:  Espinoza, Vanessa
+Entry Name:  ESMERALDA HEALY
+DOB:  1951.10.20
+ISS:  Tsunkeido
+Date:  1984.03.08
+Entry Date:  1983.01.15
+Num:  3SS2R-UCCTJ
+Entry Num:  3SS2R-UCCTJ
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5554527706210646
+Score to entry seal 2:  0.8830607823909328
+Final: False
+
+
+Image name:  Final_Dataset\Impor_Seal.jpg
+Country:  Impor
+Name:  Romanoff, Irina
+Entry Name:  IRINA ROMANOFF
+DOB:  1932.01.01
+ISS:  Tsunkeido
+Date:  1983.10.12
+Entry Date:  1983.01.28
+Num:  LPS5X-XR493
+Entry Num:  LPS5X-XR493
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.787225333116099
+Score to entry seal 2:  0.5123226511057508
+Final: False
+
+
+Image name:  Final_Dataset\Kolechia_City.jpg
+Country:  Kolechia
+Name:  Baransova, Elena
+Entry Name:  ELENA BARANSOVA
+DOB:  --1-9729.07.02
+ISS:  East Grestin
+Date:  1984.01.21
+Entry Date:  1983.01.27
+Num:  8VQVF-N132R
+Entry Num:  8VQVF-N132R
+Entry Reason:  WORK
+Score to entry seal 1:  0.540522343897936
+Score to entry seal 2:  0.8883539109338212
+Final: False
+
+
+Image name:  Final_Dataset\Kolechia_City_1.jpg
+Country:  Kolechia
+Name:  Hughes, Rickard
+Entry Name:  RICKARD HUGHES
+DOB:  -1-944.04.20
+ISS:  Wost Grestin
+Date:  1984.01.08
+Entry Date:  1983.01.24
+Num:  7SE8Q-QP49L
+Entry Num:  7SE8Q-QP49L
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5435462988873415
+Score to entry seal 2:  0.8956670489915471
+Final: False
+
+
+Image name:  Final_Dataset\Kolechia_City_2.jpg
+Country:  Kolechia
+Name:  Liu, Hali
+Entry Name:  HALI LIU
+DOB:  1933.09.13
+ISS:  Wast Grestin
+Date:  1983.11.14
+Entry Date:  1983.01.18
+Num:  M2NDL-ASS3X
+Entry Num:  M2NDL-ASS3X
+Entry Reason:  IMMIGRATE
+Score to entry seal 1:  0.5473287011167074
+Score to entry seal 2:  0.8908685025079569
+Final: False
+
+
+Image name:  Final_Dataset\Kolechia_Seal.jpg
+Country:  Kolechia
+Name:  Felipov, Endrio
+Entry Name:  ENDRIO FELIPOV
+DOB:  -1948.09.13
+ISS:  West Grestin
+Date:  1984.11.03
+Entry Date:  1983.01.25
+Num:  47DNX-4DVAM
+Entry Num:  47DNX-4DVAM
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5962924890209729
+Score to entry seal 2:  0.5813318880747242
+Final: False
+
+
+Image name:  Final_Dataset\Kolechia_Seal_1 (2).jpg
+Country:  Kolechia
+Name:  Fontani, Igor
+Entry Name:  IGOR FONTANI
+DOB:  1942.11.25
+ISS:  Yurko City
+Date:  1984.08.04
+Entry Date:  1983.01.21
+Num:  UKVAR-JBSXA
+Entry Num:  UKVAR-JBSXA
+Entry Reason:  VISIT
+Score to entry seal 1:  0.7789766062739512
+Score to entry seal 2:  0.6307254345427458
+Final: False
+
+
+Image name:  Final_Dataset\Kolechia_Seal_1.jpg
+Country:  Kolechia
+Name:  Kharvo, Samantza
+Entry Name:  SAMANTZA KHARVO
+DOB:  1868.10.19
+ISS:  Vedor
+Date:  1983.08.21
+Entry Date:  1983.01.13
+Num:  DQJF5-8A8WL
+Entry Num:  DQJF5-8A8WL
+Entry Reason:  IMMIGRATE
+Score to entry seal 1:  0.7937034393631437
+Score to entry seal 2:  0.5162477581529762
+Final: False
+
+
+Image name:  Final_Dataset\Kolechia_Seal_2.jpg
+Country:  Kolechia
+Name:  Pilzner, Alexandra
+Entry Name:  ALEXANDRA PILZNER
+DOB:  --Sb85.03.15
+ISS:  Vedor
+Date:  1984.01.14
+Entry Date:  1983.01.29
+Num:  SFOJ9-XCCKO
+Entry Num:  SFOJ9-XCCKO
+Entry Reason:  WORK
+Score to entry seal 1:  0.6020376174374628
+Score to entry seal 2:  0.5828904243808286
+Final: False
+
+
+Image name:  Final_Dataset\Obristan_City.jpg
+Country:  Orbristan
+Name:  Hvid, Erik
+Entry Name:  ERIK HVID
+DOB:  1934.03.15
+ISS:  West Grestil
+Date:  1984.05.25
+Entry Date:  1983.01.27
+Num:  BUMH3-C8KTS
+Entry Num:  BUMH3-C8KTS
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.9166452951392104
+Score to entry seal 2:  0.5209885480702016
+Final: False
+
+
+Image name:  Final_Dataset\Obristan_Name.jpg
+Country:  Orbristan
+Name:  Sheridan, Cutler
+Entry Name:  CUTLER PAVLEK
+DOB:  1933.02.08
+ISS:  Mergerous
+Date:  1980.05.12
+Entry Date:  1983.01.25
+Num:  LVEC1-BNDXM
+Entry Num:  LVEC1-BNDXM
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.5563105997372401
+Score to entry seal 2:  0.88244108233075
+Final: False
+
+
+Image name:  Final_Dataset\Obristan_Number.jpg
+Country:  Orbristan
+Name:  Jarmula, Sonia
+Entry Name:  SONIA JARMULA
+DOB:  1951.11.25
+ISS:  Lorndaz
+Date:  1984.08.07
+Entry Date:  1983.01.15
+Num:  3TSLS-7978B
+Entry Num:  1800H-VNRUN
+Entry Reason:  VISIT
+Score to entry seal 1:  0.9432526120848997
+Score to entry seal 2:  0.51822260334375
+Final: False
+
+
+Image name:  Final_Dataset\Obristan_PDate.jpg
+Country:  Orbristan
+Name:  Salladay, Valerie
+Entry Name:  VALERIE SALLADAY
+DOB:  1953.03.14
+ISS:  Lorndaz
+Date:  1982.12.11
+Entry Date:  1983.01.30
+Num:  97N55-ULT7G
+Entry Num:  97N55-ULT7G
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.9498000289587998
+Score to entry seal 2:  0.5200104169410543
+Final: False
+
+
+Image name:  Final_Dataset\Orbristan_City_1.jpg
+Country:  Orbristan
+Name:  Yesilkova, Eva
+Entry Name:  EVA YESILKOVA
+DOB:  1951.01.02
+ISS:  Glorian
+Date:  1984.05.02
+Entry Date:  1983.01.29
+Num:  9QBGG-WMG29
+Entry Num:  9QBGG-WMG29
+Entry Reason:  IMMIGRATE
+Score to entry seal 1:  0.9102658822724354
+Score to entry seal 2:  0.520241605678783
+Final: False
+
+
+Image name:  Final_Dataset\Orbristan_Name.jpg
+Country:  Orbristan
+Name:  Farley, Cormac
+Entry Name:  CORMAK FARLEY
+DOB:  1940.12.31
+ISS:  Lorndaz
+Date:  1983.10.09
+Entry Date:  1983.01.30
+Num:  1W7NS-XEL1M
+Entry Num:  1W7NS-XEL1M
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5393907884706021
+Score to entry seal 2:  0.9069856067403257
+Final: False
+
+
+Image name:  Final_Dataset\Orbristan_Seal_1.jpg
+Country:  Orbristan
+Name:  Kernel, Jacqueline
+Entry Name:  JACQUELINE KERNEL
+DOB:  1942.05.27
+ISS:  Skal
+Date:  1984.10.09
+Entry Date:  1983.01.11
+Num:  K2GXN-X9AEU
+Entry Num:  K2GXN-X9AEU
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.8887044333762265
+Score to entry seal 2:  0.4987578657581384
+Final: True
+
+
+Image name:  Final_Dataset\Republia_City.jpg
+Country:  Republia
+Name:  Haapakoski, Niko
+Entry Name:  NIKO HAAPAKOSKI
+DOB:  1951.08.08
+ISS:  Orvech Vonol
+Date:  1984.01.04
+Entry Date:  1983.01.24
+Num:  ACTXC-DTH9S
+Entry Num:  ACTXC-DTH9S
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.5511336010590322
+Score to entry seal 2:  0.8798794294468147
+Final: False
+
+
+Image name:  Final_Dataset\Republia_City_1.jpg
+Country:  Republia
+Name:  Sheridan, Cutler
+Entry Name:  CUTLER SHERIDAN
+DOB:  1944.08.07
+ISS:  East Grestin
+Date:  1984.05.03
+Entry Date:  1983.01.19
+Num:  UB189-BRT2T
+Entry Num:  UB189-BRT2T
+Entry Reason:  VISIT
+Score to entry seal 1:  0.9505022893358261
+Score to entry seal 2:  0.5165762869342136
+Final: False
+
+
+Image name:  Final_Dataset\Republia_EDate.jpg
+Country:  Republia
+Name:  Kadmus, Yohanna
+Entry Name:  YOHANNA KADMUS
+DOB:  1942.03.15
+ISS:  True Glorian
+Date:  1984.08.19
+Entry Date:  1982.12.08
+Num:  EQE3B-WTMFX
+Entry Num:  EQE3B-WTMFX
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5420970699975727
+Score to entry seal 2:  0.9080633843488622
+Final: False
+
+
+Image name:  Final_Dataset\Republia_Name.jpg
+Country:  Republia
+Name:  Kurdatseva, Alina
+Entry Name:  ALINA KURDATSAVA
+DOB:  1953.07.02
+ISS:  Bostan
+Date:  1983.05.08
+Entry Date:  1983.01.23
+Num:  NK3UH-QMTLS
+Entry Num:  NK3UH-QMTLS
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.5372687843746011
+Score to entry seal 2:  0.9077788500564224
+Final: False
+
+
+Image name:  Final_Dataset\Republia_PDate.jpg
+Country:  Republia
+Name:  Mullins, Kristof
+Entry Name:  KRISTOF MULLINS
+DOB:  1944.09.13
+ISS:  Bostan
+Date:  1982.12.21
+Entry Date:  1983.01.12
+Num:  W51HR-F1TNM
+Entry Num:  W51HR-F1TNM
+Entry Reason:  WORK
+Score to entry seal 1:  0.9490152857495339
+Score to entry seal 2:  0.5206891748926884
+Final: False
+
+
+Image name:  Final_Dataset\Republia_Seal.jpg
+Country:  Republia
+Name:  Deboer, David
+Entry Name:  DAVID DEBOER
+DOB:  1945.02.08
+ISS:  True Glorian
+Date:  1984.12.20
+Entry Date:  1983.01.27
+Num:  G88S7-D923F
+Entry Num:  G88S7-D923F
+Entry Reason:  IMMIGRATE
+Score to entry seal 1:  0.8713386341472099
+Score to entry seal 2:  0.5238922339589374
+Final: True
+
+
+Image name:  Final_Dataset\Republia_Seal_1.jpg
+Country:  Republia
+Name:  Fjeld, Morten
+Entry Name:  MORTEN FJELD
+DOB:  1944.10.19
+ISS:  Bostan
+Date:  1984.11.08
+Entry Date:  1983.01.12
+Num:  H39K0-HUS9V
+Entry Num:  H39K0-HUS9V
+Entry Reason:  VISIT
+Final: False
+
+
+Image name:  Final_Dataset\UF_City_1.jpg
+Country:  UF
+Name:  Semin, Arseny
+Entry Name:  ARSENY SEMIN
+DOB:  1942.09.13
+ISS:  Paradizna
+Date:  1983.05.22
+Entry Date:  1983.01.21
+Num:  BDSW8-CALBT
+Entry Num:  BDSW8-CALBT
+Entry Reason:  VISIT
+Score to entry seal 1:  0.5451715896670845
+Score to entry seal 2:  0.8917306733630458
+Final: False
+
+
+Image name:  Final_Dataset\UF_Name.jpg
+Country:  UF
+Name:  Anguiano, Rafael
+Entry Name:  RAFAOL ANGUIANO
+DOB:  -59948.03.14
+ISS:  Korista City
+Date:  1984.08.13,
+Entry Date:  1983.01.17
+Num:  LNABG-V43M1
+Entry Num:  LNABG-V43M1
+Entry Reason:  IMMIGRATE
+Score to entry seal 1:  0.887763638390011
+Score to entry seal 2:  0.5058805779656158
+Final: False
+
+
+Image name:  Final_Dataset\UF_Number.jpg
+Country:  UF
+Name:  Nivu, Lajana
+Entry Name:  LAJANA NIVU
+DOB:  1941.08.07
+ISS:  Great Rapid
+Date:  1984.07.18
+Entry Date:  1983.01.20
+Num:  FS8P0-V201Q
+Entry Num:  L7107-5LCN4
+Entry Reason:  WORK
+Score to entry seal 1:  0.5390626716523348
+Score to entry seal 2:  0.9040082890264229
+Final: False
+
+
+Image name:  Final_Dataset\UF_Number_1.jpg
+Country:  UF
+Name:  Vafahizodova, Sheye
+Entry Name:  SHEYEN VAFAHIZODOVA
+DOB:  
+ISS:  Korista City
+Date:  1983.08.28,
+Entry Date:  1983.01.24
+Num:  WAJBG-7QDK5
+Entry Num:  KRSSS-U4X8H
+Entry Reason:  TRANSIT
+Score to entry seal 1:  0.9127447043101997
+Score to entry seal 2:  0.5152569621722916
+Final: False
+
+
+Image name:  Final_Dataset\UF_PDate_1.jpg
+Country:  UF
+Name:  Bruscht, Olga
+Entry Name:  OLGA BRUSCHT
+DOB:  1981.10.19
+ISS:  Korista City
+Date:  1982.12.18,
+Entry Date:  1983.01.17
+Num:  PAJ39-GBT5G
+Entry Num:  PAJ39-GBT5G
+Entry Reason:  IMMIGRATE
+Score to entry seal 1:  0.9503886598573067
+Score to entry seal 2:  0.516282645816879
+Final: False
+
+
+Image name:  Final_Dataset\UF_Seal.jpg
+Country:  UF
+Name:  Hvid, Erik
+Entry Name:  ERIK HVID
+DOB:  1941.10.20
+ISS:  Great Rapid
+Date:  1983.11.05
+Entry Date:  1983.01.13
+Num:  EQPWO-DEKPA
+Entry Num:  EQPWO-DEKPA
+Entry Reason:  VISIT
+Score to entry seal 1:  0.6033901015211967
+Score to entry seal 2:  0.5819042060529737
+Final: False
+
+
+Final Results. True:  33  False:  36
