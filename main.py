@@ -28,17 +28,15 @@ entry_seal_2 = cv2.cvtColor(entry_seal_2, cv2.COLOR_BGR2RGB)
 # ------------------------------------
 
 
-# Identify the shapes of our important documents
-# Use Canny edge detection
+# Uses Canny Edge Detection and Connected Components
+# to find the edges of the documents
+# There will be only two documents an image, and they are 
+# the largest and second largest items in the image
 def identify_shapes(img):
 
     # Convert to grayscale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
     canny = cv2.Canny(gray, 100, 200, 1)
-
-    # cv2.imshow("canny",canny)
-
     cnts, hierarchy= cv2.findContours(canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     # Store areas of all contours
@@ -50,7 +48,6 @@ def identify_shapes(img):
     # Draw contours of largest and second-largest shapes
     sorted_contours = sorted(cnts, key=cv2.contourArea, reverse=True)
     largest_item = sorted_contours[0]
-    
     cv2.drawContours(img, [largest_item], -1, (255, 0, 0), 10)
 
     second_largest_item = sorted_contours[1]
@@ -95,20 +92,13 @@ def identify_shapes(img):
     return largeCoordTop, largeCoordBot, smallCoordTop, smallCoordBot
 
 # Identify the country of origin based on color of passport edge
+# The color ranges of the passports are mutually exclusive from one another,
+# so there is no worry on miscounting a pixel
 # Resource on color detection:
 # https://www.pyimagesearch.com/2014/08/04/opencv-python-color-detection/
 def detect_country(img):
-    # RGB colors for passports are static and these values should all be mutually exclusive
-    # No passport should be mistaken for another
 
-    boundaries = [([57, 70, 58], [63, 74, 62]),
-                  ([50, 77, 30], [52, 78, 37]),
-                  ([95, 28, 10], [101, 34, 17]),
-                  ([81, 32, 60], [87, 37, 66]),
-                  ([129, 5, 19], [135, 12, 25]),
-                  ([71, 40, 27], [79, 44, 34]),
-                  ([38, 25, 81], [43, 30, 90])]
-
+    # Array on list of countries
     countries = ["Arstotzka",
                  "Antegria",
                  "Impor",
@@ -117,29 +107,41 @@ def detect_country(img):
                  "Republia",
                  "UF"]
 
-    # Detect if the color exists
+    # RGB color ranges for the passport colors
+    # They are in the same order as the countries array
+    boundaries = [([57, 70, 58], [63, 74, 62]),
+                  ([50, 77, 30], [52, 78, 37]),
+                  ([95, 28, 10], [101, 34, 17]),
+                  ([81, 32, 60], [87, 37, 66]),
+                  ([129, 5, 19], [135, 12, 25]),
+                  ([71, 40, 27], [79, 44, 34]),
+                  ([38, 25, 81], [43, 30, 90])]
+
+    # Variabels needed to determine country of the passport
+    # currentBorder is only needed to show the color border of the passport coresponding to its country color
     countryInd = 0
     maxValue = 0
     country = ""
     currentBorder = ""
     
+    # Loop through boundary colors to compare passort color to color ranges
     for (lower, upper) in boundaries:
         # Create arrays from the boundaries
         lower = np.array(lower, dtype="uint8")
         upper = np.array(upper, dtype="uint8")
+
         # Find the colors within the specified boundaries and apply the mask
         mask = cv2.inRange(img, lower, upper)
         border = cv2.bitwise_and(img, img, mask=mask)
 
         # We want to check the color of the mask and find its corresponding country
-        # We can sum the values in the mask, and the largest value mean
+        # We can sum the values in the mask, and the largest value will mean
         # we found the most color within those boundaries
         colorSum = np.sum(border)
         if colorSum > maxValue:
             country = countries[countryInd]
             maxValue = colorSum
             currentBorder = border
-
         countryInd += 1
 
     plt.imshow(currentBorder)
@@ -148,13 +150,11 @@ def detect_country(img):
     return country
 
 # Isolates components of entry permit
-# This is univeral for all countries (EXCEPT ARSTOTZKA)
-# Returns Name, passport number, date
+# The location of the components is univeral for all countries (EXCEPT ARSTOTZKA, which does NOT need a permit)
+# It returns binarized and thresholded images of Name, passport number, date
 def entry_permit_attr(entry_permit):
-    # Get image of the components
-    # plt.imshow(entry_permit)
-    # plt.show()
     
+    # Locations of attributes in entry permit
     name = entry_permit[265:295, 43:394]
     pass_num = entry_permit[365:394, 43:394]
     reason = entry_permit[408:442, 200:394]
@@ -176,7 +176,7 @@ def entry_permit_attr(entry_permit):
 
 # Clean up components of entry permit attributes for tesseract
 # We will preprocess the image for better text recognition
-# We will grayscale, noise removal, thresholding, dilation, eroding, opening
+# with grayscale, noise removal, thresholding, dilation, eroding, opening
 def thresh_entry(attribute_img):
     gray = cv2.cvtColor(attribute_img, cv2.COLOR_RGB2GRAY)
     blur = cv2.GaussianBlur(gray, (1, 1), 0)
@@ -190,8 +190,8 @@ def thresh_entry(attribute_img):
 
 # Clean up components of passport attributes for tesseract
 # We will preprocess the image for better text recognition
-# We will grayscale, noise removal, thresholding, dilation, eroding, opening
-def thresh_img(attribute_img, is_Orb):
+# with grayscale, noise removal, thresholding, dilation, eroding, opening
+def thresh_pass(attribute_img, is_Orb):
     gray = cv2.cvtColor(attribute_img, cv2.COLOR_RGB2GRAY)
     blur = cv2.GaussianBlur(gray, (1, 1), 0)
     if not is_Orb:
@@ -218,11 +218,11 @@ def ant_passport_attr(passport):
     pass_num = passport[437:475, 185:370]
 
     # Clean up components of noise with thresholding
-    name = thresh_img(name, False)
-    dob = thresh_img(dob, False)
-    iss = thresh_img(iss, False)
-    date = thresh_img(date, False)
-    pass_num = thresh_img(pass_num, False)
+    name = thresh_pass(name, False)
+    dob = thresh_pass(dob, False)
+    iss = thresh_pass(iss, False)
+    date = thresh_pass(date, False)
+    pass_num = thresh_pass(pass_num, False)
 
     return name, dob, iss, date, pass_num
 
@@ -236,11 +236,11 @@ def ar_passport_attr(passport):
     pass_num = passport[440:475, 22:200]
 
     # Clean up components of noise with thresholding
-    name = thresh_img(name, False)
-    dob = thresh_img(dob, False)
-    iss = thresh_img(iss, False)
-    date = thresh_img(date, False)
-    pass_num = thresh_img(pass_num, False)
+    name = thresh_pass(name, False)
+    dob = thresh_pass(dob, False)
+    iss = thresh_pass(iss, False)
+    date = thresh_pass(date, False)
+    pass_num = thresh_pass(pass_num, False)
 
     return name, dob, iss, date, pass_num
 
@@ -252,9 +252,9 @@ def ar_ID_attr(ID):
     dob = ID[112:142, 197:369]
 
     # Clean up components of noise with thresholding
-    district = 255 -  thresh_img(district, False)
-    name = thresh_img(name, False)
-    dob = thresh_img(dob, False)
+    district = 255 -  thresh_pass(district, False)
+    name = thresh_pass(name, False)
+    dob = thresh_pass(dob, False)
 
     return district, name, dob
 
@@ -268,11 +268,11 @@ def imp_passport_attr(passport):
     pass_num = passport[425:465, 180:361]
 
     # Clean up components of noise with thresholding
-    name = thresh_img(name, False)
-    dob = thresh_img(dob, False)
-    iss = thresh_img(iss, False)
-    date = thresh_img(date, False)
-    pass_num = thresh_img(pass_num, False)
+    name = thresh_pass(name, False)
+    dob = thresh_pass(dob, False)
+    iss = thresh_pass(iss, False)
+    date = thresh_pass(date, False)
+    pass_num = thresh_pass(pass_num, False)
 
     return name, dob, iss, date, pass_num
 
@@ -307,11 +307,11 @@ def orb_passport_attr(passport):
 
     # Clean up components of noise with thresholding
     # For Orbristan: Need to invert! Except for passport name
-    name = thresh_img(name, False)
-    dob = thresh_img(dob, True)
-    iss = thresh_img(iss, True)
-    date = thresh_img(date, True)
-    pass_num = thresh_img(pass_num, True)
+    name = thresh_pass(name, False)
+    dob = thresh_pass(dob, True)
+    iss = thresh_pass(iss, True)
+    date = thresh_pass(date, True)
+    pass_num = thresh_pass(pass_num, True)
 
     plt.imshow(name)
     plt.show()
@@ -329,11 +329,11 @@ def rep_passport_attr(passport):
     pass_num = passport[436:470, 166:375]
 
     # Clean up components of noise with thresholding
-    name = thresh_img(name, False)
-    dob = thresh_img(dob, False)
-    iss = thresh_img(iss, False)
-    date = thresh_img(date, False)
-    pass_num = thresh_img(pass_num, False)
+    name = thresh_pass(name, False)
+    dob = thresh_pass(dob, False)
+    iss = thresh_pass(iss, False)
+    date = thresh_pass(date, False)
+    pass_num = thresh_pass(pass_num, False)
 
     return name, dob, iss, date, pass_num
 
@@ -347,18 +347,20 @@ def uf_passport_attr(passport):
     pass_num = passport[430:470, 165:370]
 
     # Clean up components of noise with thresholding
-    name = thresh_img(name, False)
-    dob = thresh_img(dob, False)
-    iss = thresh_img(iss, False)
-    date = thresh_img(date, False)
-    pass_num = thresh_img(pass_num, False)
+    name = thresh_pass(name, False)
+    dob = thresh_pass(dob, False)
+    iss = thresh_pass(iss, False)
+    date = thresh_pass(date, False)
+    pass_num = thresh_pass(pass_num, False)
 
     return name, dob, iss, date, pass_num
 
-# Using tesseract to read text from passport
+# Calls on tesseract to read information from passport attributes
 def read_passport(p_name, p_DOB, p_ISS, p_date, p_num):
-    # Date information should not have spaces inside
+
     p_name_text = pytesseract.image_to_string(p_name, lang='eng2').strip()
+
+    # Date information should not have spaces inside
     p_DOB_text = pytesseract.image_to_string(p_DOB, lang='eng2').replace(" ","").strip()
     p_ISS_text = pytesseract.image_to_string(p_ISS, lang='eng2').strip()
     p_date_text = pytesseract.image_to_string(p_date, lang='eng2').replace(" ","").strip()
@@ -366,7 +368,7 @@ def read_passport(p_name, p_DOB, p_ISS, p_date, p_num):
 
     return p_name_text, p_DOB_text, p_ISS_text, p_date_text, p_num_text
 
-# Use tesseract to read text from entry permit
+# Calls on tesseract to read information from entry permit attributes
 def read_permit(e_name, e_num, e_reason, e_date):
     # Text in entry permit is all in caps
     e_name_text = pytesseract.image_to_string(e_name, lang='eng2').strip()
@@ -376,7 +378,7 @@ def read_permit(e_name, e_num, e_reason, e_date):
 
     return e_name_text, e_num_text, e_reason_text, e_date_text
 
-# Use tesseract to read text from Arstotzkan ID
+# Calls on tesseract to read information from Arstotzkan ID
 def read_ID(ID_distr, ID_name, ID_DOB):
     ID_distr_text = pytesseract.image_to_string(ID_distr, lang='eng3').strip()
     ID_name_text = pytesseract.image_to_string(ID_name, lang='eng3').replace("\n", " ").strip()
@@ -386,9 +388,8 @@ def read_ID(ID_distr, ID_name, ID_DOB):
 
     return ID_distr_text, ID_name_text, ID_DOB_text
 
-
-# Determine within a percentage how much of a match two texts are
-# Percentage is in decimal format
+# Determine how much of a match two texts
+# Two texts are considered a match if they match at or more than the percentage
 def determine_match(text_1, text_2, percentage):
     if len(text_1) != len(text_2):
         return False
@@ -408,23 +409,22 @@ def compare_passport_entry(passport_info, permit_info):
     # permit_info: [e_name_text, e_num_text, e_reason_text, e_date_text]
 
     # Compare names
-    # Valid: match
-    # Format the names: passport is Last, First; entry permit is FIRST LAST 
-    # to first last
+    # The names have to be formatted: passport is "Last, First"; entry permit is "FIRST LAST ""
+    # The format to check with is "first last"
     passport_name = (' '.join(passport_info[0].split(",")[::-1])).strip().lower()
     permit_name = permit_info[0].lower()
     name_bool = determine_match(passport_name, permit_name, 0.95)
 
     # Compare passport number
-    # Valid: match
     number_bool = determine_match(passport_info[4], permit_info[1], 0.95)
 
     # Determine if date is valid
-    # Valid: after 1983.01.01
     # Since the only characters allowed are numbers and period, all other punctuation points and letters should be removed
+    # This will account for extra lines that come from unintentionally cropping other attributes
     passport_info_cleaned = ''.join(i for i in passport_info[3] if i in "1234567890.") 
     permit_info_cleaned = ''.join(i for i in permit_info[3] if i in "1234567890.") 
 
+    # Convert to time format
     passport_date = datetime.strptime(passport_info_cleaned,'%Y.%m.%d')
     permit_date = datetime.strptime(permit_info_cleaned,'%Y.%m.%d')
     current_day = datetime(1983, 1, 1)
@@ -438,12 +438,12 @@ def compare_passport_ID(passport_info, ID_info):
     # ID info: [ID_distr_text, ID_name_text, ID_DOB_text]
 
     # Determine if District is correct
-    # Remove the "DISTRICT" from the end of the string
+    # Removed the "DISTRICT" from the end of the string
     district_bool = district(ID_info[0][:-9])
 
     # Determine if names match
-    # Format of passport is Last, First; format of ID is LAST, FIRST
-    # Remove white spaces as well, as sometimes tesseract adds an extra whitespace
+    # Format of passport is "Last, First"; format of ID is "LAST, FIRST"
+    # The format to check with is "first last"
     passport_name = passport_info[0].lower().replace(" ", "")
     ID_name = ID_info[1].lower().replace(" ", "")
     name_bool = determine_match(passport_name, ID_name, 0.95)
@@ -453,6 +453,7 @@ def compare_passport_ID(passport_info, ID_info):
     passport_DOB_cleaned = ''.join(i for i in passport_info[1] if i in "1234567890.") 
     ID_DOB_cleaned = ''.join(i for i in ID_info[2] if i in "1234567890.") 
 
+    # Convert to date format
     passport_DOB = datetime.strptime(passport_DOB_cleaned,'%Y.%m.%d')
     ID_DOB = datetime.strptime(ID_DOB_cleaned,'%Y.%m.%d')
 
@@ -462,6 +463,7 @@ def compare_passport_ID(passport_info, ID_info):
 
 # Determine if the stamp on the entry permit is valid
 def permit_seal(entry_permit):
+
     # Stamp will always be above a certain height on the entry permit
     cropped = entry_permit[:200,:]
 
@@ -493,8 +495,7 @@ def permit_seal(entry_permit):
     else:
         c = max(cnts, key=cv2.contourArea)
 
-    # draw the contours of c
-    # cv2.drawContours(cropped, [c], -1, (0, 0, 255), 2)
+    # Find the corrdinates of the bounding box around the seal
     lsmallx, lsmally, llargex, llargey = math.inf, math.inf,0,0
     for coord in c:
         if coord[0][0] < lsmallx:
@@ -506,11 +507,6 @@ def permit_seal(entry_permit):
         if coord[0][1] > llargey:
             llargey = coord[0][1]
 
-    # show the output image
-    # cv2.rectangle(cropped, (lsmallx, lsmally), (llargex, llargey), (0, 255, 0), 2)
-    # print(lsmallx, lsmally, llargex, llargey)
-    # print(llargex-lsmallx, llargey-lsmally)
-
     # Mask the image
     masked = cv2.bitwise_and(cropped, cropped, mask = mask)
 
@@ -520,16 +516,16 @@ def permit_seal(entry_permit):
     # Since there will be differences due to masking and text on the seal,
     # the difference should be within a certain range
     
-    # First, default icons are 70 x 70
-    # The seal in game will always be bigger so we havbe to reshape the seal
+    # First, default icon size is 70 x 70
+    # The seal in game will always be bigger so we have to reshape the correct seals in order to perform SSIM
     resized_seal_1 = cv2.resize(entry_seal_1, (llargex-lsmallx, llargey-lsmally), interpolation = cv2.INTER_NEAREST)
     resized_seal_2 = cv2.resize(entry_seal_2, (llargex-lsmallx, llargey-lsmally), interpolation = cv2.INTER_NEAREST)
-    # Extract seal from cropped image and compare it to the original seal
-    extracted_seal = masked[lsmally:llargey, lsmallx:llargex]
 
+    # Extract seal from cropped image
+    extracted_seal = masked[lsmally:llargey, lsmallx:llargex]
     extracted_seal_mask = cv2.inRange(extracted_seal, color1, color2)
 
-    # Dilate the mask
+    # Dilate the mask on the extracted seal
     kernel = np.ones((3,3), np.uint8)
     extracted_seal_mask = cv2.erode(extracted_seal_mask, kernel, iterations = 1)
     extracted_seal_mask = cv2.dilate(extracted_seal_mask, kernel, iterations = 1)
@@ -537,7 +533,7 @@ def permit_seal(entry_permit):
     # ----------------------------------
     resized_seal_1_mask = cv2.inRange(resized_seal_1, color1, color2)
 
-    # Dilate the mask
+    # Dilate the mask on correct seal 1
     kernel = np.ones((3,3), np.uint8)
     resized_seal_1_mask = cv2.erode(resized_seal_1_mask, kernel, iterations = 1)
     resized_seal_1_mask = cv2.dilate(resized_seal_1_mask, kernel, iterations = 1)
@@ -545,15 +541,16 @@ def permit_seal(entry_permit):
     # -----------------------------------
     resized_seal_2_mask = cv2.inRange(resized_seal_2, color1, color2)
 
-    # Dilate the mask
+    # Dilate the mask on correct seal 2
     kernel = np.ones((3,3), np.uint8)
     resized_seal_2_mask = cv2.erode(resized_seal_2_mask, kernel, iterations = 1)
     resized_seal_2_mask = cv2.dilate(resized_seal_2_mask, kernel, iterations = 1)
 
     # -----------------------------------
 
-    (score_1, diff_1) = compare_ssim(extracted_seal_mask, resized_seal_1_mask, full=True, multichannel=True)
-    (score_2, diff_1) = compare_ssim(extracted_seal_mask, resized_seal_2_mask, full=True, multichannel=True)
+    # Perform SSIM on extracted seal and both correct seals.
+    score_1, _ = compare_ssim(extracted_seal_mask, resized_seal_1_mask, full=True, multichannel=True)
+    score_2, _ = compare_ssim(extracted_seal_mask, resized_seal_2_mask, full=True, multichannel=True)
 
     plt.imshow(extracted_seal_mask)
     plt.show()
@@ -598,7 +595,6 @@ def issuing_city(country, p_ISS_text):
         match = (determine_match(p_ISS_text, "Great Rapid", percentage) or
                 determine_match(p_ISS_text, "Shingleton", percentage) or
                 determine_match(p_ISS_text, "Korista City", percentage))
-
     return match
 
 # Compare District of Arstotzkan ID to hard-coded text
@@ -615,8 +611,10 @@ def district(district):
     return match
 
 # Resize documents
+# This is to make sure the boudnaries on the documents for all passports are the same
+# To minimize the wobbling when we crop attributes out
 def resize(top, bot, width, height):
-    # Make sure the dimensions are to what we want
+
     if (bot[0] - top[0] < width):
         temp = (width - (bot[0] - top[0]))//2
         top[0] -= temp
@@ -630,40 +628,34 @@ def resize(top, bot, width, height):
 
 # Runs all the needed functions in order to compare
 def compare(img_name):
+
+    # Read images
     img = cv2.imread(img_name)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     plt.imshow(img)
     plt.show()
 
-    # We only want to look at the table in the game
-    # Don't forget, array is in (y,x) format
+    # Crop the table from the screenshot
     img = img[345:1040, 635:1850]
 
     plt.imshow(img)
     plt.show()
 
-    # Coordinates of bounding box of items
-    # We are only looking at two items per country
-    # For Arstotzka, passport and ID
-    # For all other countries, passport and entry permit
+    # Coordinates of bounding box of items of the two items in the screenshot
     largeCoordTop, largeCoordBot, smallCoordTop, smallCoordBot = identify_shapes(img)
 
     # Determine the country of origin
-    # We are looking for a specific shade for the passport
     country = detect_country(img)
     print("Country: ", country)
 
-    # If the country is Arstotzka, then we are only looking at the passport
-    # Given by the bounding box of largeCoordTop, largeCoordBot
+    # If the country is Arstotzka, then we are only looking at the passport and ID
     if country == "Arstotzka":
 
         # We want 390 by 485 for the passport
-        # Resize passport
         largeCoordTop, largeCoordBot = resize(largeCoordTop, largeCoordBot, 390, 285)
 
         # We want 390 by 110 for the ID
-        # Resize ID
         smallCoordTop, smallCoordBot = resize(smallCoordTop, smallCoordBot, 390, 210)
 
         # Isolate the passport and ID according to its bounding box
@@ -684,15 +676,17 @@ def compare(img_name):
         # Identify the text within the ID
         ID_distr_text, ID_name_text, ID_DOB_text = read_ID(ID_distr, ID_name, ID_DOB)
 
-        # Compare text in passport and ID
+        # Store passport and ID info into array for less amountof parameters when we compare
         passport_info = [p_name_text, p_DOB_text, p_ISS_text, p_date_text, p_num_text]
         ID_info = [ID_distr_text, ID_name_text, ID_DOB_text]
 
+        # Compare Passport and ID contents
         passport_ID_match = compare_passport_ID(passport_info, ID_info)
 
         # Compare Issuing City
         issuing_city_match = issuing_city(country, p_ISS_text)
 
+        # Prints information
         print("Name: ", p_name_text)
         print("ID Name: ", ID_name_text)
         print("DOB: ", p_DOB_text)
@@ -704,15 +698,13 @@ def compare(img_name):
 
         return passport_ID_match & issuing_city_match
 
-    # If the country is not Arstotzka
-    # We are looking at passport and entry permit
+    # If the country is not Arstotzka, then we=e are looking at only the passport and entry permit
     else:
+
         # We want 390 by 485 for the passport
-        # Resize passport
         smallCoordTop, smallCoordBot = resize(smallCoordTop, smallCoordBot, 390, 485)
 
         # We want 450 by 600 for the Entry Permit
-        # Resize entry permit
         largeCoordTop, largeCoordBot = resize(largeCoordTop, largeCoordBot, 450, 600)
 
         # Isolate the entry permit, which will be the largest element for countries NOT Arstotzka
@@ -720,15 +712,13 @@ def compare(img_name):
         entry_permit = img[largeCoordTop[1]:largeCoordBot[1],largeCoordTop[0]:largeCoordBot[0]]
         passport = img[smallCoordTop[1]:smallCoordBot[1],smallCoordTop[0]:smallCoordBot[0]]
 
-        # plt.imshow(entry_permit)
-        # plt.show()
-
         # We will get the image of the components of the entry permits
         # Name, passport number, date
         e_name, e_num, e_reason, e_date = entry_permit_attr(entry_permit)
 
-        # As well as components of the passports
-        # Name, DOB, Issuing City, Date, Passport number
+        # We will get the image of the components of the passport
+        # The location of the attribtues depend on the country
+        # The attributes are Name, DOB, Issuing City, Date, Passport number
         if country == "Antegria":
             p_name, p_DOB, p_ISS, p_date, p_num = ant_passport_attr(passport)
         elif country == "Impor":
@@ -746,6 +736,7 @@ def compare(img_name):
         p_name_text, p_DOB_text, p_ISS_text, p_date_text, p_num_text = read_passport(p_name, p_DOB, p_ISS, p_date, p_num)
         e_name_text, e_num_text, e_reason_text, e_date_text = read_permit(e_name, e_num, e_reason, e_date)
 
+        # Prints information
         print("Name: ", p_name_text)
         print("Entry Name: ", e_name_text)
         print("DOB: ", p_DOB_text)
@@ -756,19 +747,20 @@ def compare(img_name):
         print("Entry Num: ", e_num_text)
         print("Entry Reason: ", e_reason_text)
         
-
+        # Store passport and ID info into array for less amountof parameters when we compare
         passport_info = [p_name_text, p_DOB_text, p_ISS_text, p_date_text, p_num_text]
         permit_info = [e_name_text, e_num_text, e_reason_text, e_date_text]
 
+        # Compare passport and entry permit
         passport_permit_match = compare_passport_entry(passport_info, permit_info)
 
         # Compare Seal 
-        # Looking at seal on entry permit
         permit_seal_match = permit_seal(entry_permit)
 
         # Compare Issuing City
         issuing_city_match = issuing_city(country, p_ISS_text)
 
+        # Prints information
         print("Passport - Permit match:", passport_permit_match)
         print("ISS match:", issuing_city_match)
         print("Permit Seal match:", permit_seal_match)
@@ -778,20 +770,24 @@ def compare(img_name):
     
 
 def main():
+
+    # --- Test on individual image ---
     dir = 'Final_Dataset/'
     img_name = 'Obristan_Name.jpg'
     print("Image name: ", img_name)
     print("Final: ", compare(dir + img_name))
 
-   # Change folder for testing
+    # ---------------------------------------------------------------------------------------------------
+
+    # --- Test on all images in folder ---
     # dir = glob.glob("Final_Dataset/*.jpg")
     # false = 0
     # true = 0
 
-    # Output into text file
+    ## Output into text file
     # sys.stdout = open("Final_Output.txt", "wt")
 
-    # # In the Screenshots_pssprt_EntryPermit folder, we have 14 correct and 26 incorrect
+    ## In the Screenshots_pssprt_EntryPermit folder, we have 14 correct and 26 incorrect
     # for img in dir:
     #     print("Image name: ", img)
     #     result = compare(img)
@@ -806,7 +802,7 @@ def main():
 
     # sys.stdout.close()
 
-    # Final Dataset: Real True: 31, Real False: 38
+    # --- Final Dataset: Real True: 31, Real False: 38 ---
 
 if __name__ == "__main__":
     main()
