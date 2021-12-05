@@ -154,6 +154,9 @@ def detect_country(img):
 # It returns binarized and thresholded images of Name, passport number, date
 def entry_permit_attr(entry_permit):
     
+    plt.imshow(entry_permit)
+    plt.show()
+
     # Locations of attributes in entry permit
     name = entry_permit[265:295, 43:394]
     pass_num = entry_permit[365:394, 43:394]
@@ -297,6 +300,9 @@ def kol_passport_attr(passport):
 # Isolates components of Orbristan passport
 # The components are Name, DOB, Issuing City, Date, Passport number
 def orb_passport_attr(passport):
+    plt.imshow(passport)
+    plt.show()
+
     name = passport[280:320, 20:280]
     plt.imshow(name)
     plt.show()
@@ -466,9 +472,6 @@ def permit_seal(entry_permit):
 
     # Stamp will always be above a certain height on the entry permit
     cropped = entry_permit[:200,:]
-
-    plt.imshow(entry_permit)
-    plt.show()
 
     plt.imshow(cropped)
     plt.show()
