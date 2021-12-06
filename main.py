@@ -28,7 +28,7 @@ entry_seal_2 = cv2.cvtColor(entry_seal_2, cv2.COLOR_BGR2RGB)
 # ------------------------------------
 
 
-# Uses Canny Edge Detection and Connected Components
+# Uses Canny Edge Detection
 # to find the edges of the documents
 # There will be only two documents an image, and they are 
 # the largest and second largest items in the image
@@ -37,7 +37,7 @@ def identify_shapes(img):
     # Convert to grayscale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     canny = cv2.Canny(gray, 100, 200, 1)
-    cnts, hierarchy= cv2.findContours(canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cnts, _= cv2.findContours(canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     # Store areas of all contours
     all_areas= []
@@ -144,8 +144,8 @@ def detect_country(img):
             currentBorder = border
         countryInd += 1
 
-    plt.imshow(currentBorder)
-    plt.show()
+    # plt.imshow(currentBorder)
+    # plt.show()
 
     return country
 
