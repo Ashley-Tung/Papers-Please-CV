@@ -52,8 +52,6 @@ def identify_shapes(img):
 
     second_largest_item = sorted_contours[1]
     cv2.drawContours(img, [second_largest_item], -1, (255, 0, 0), 10)
-    plt.imshow(img)
-    plt.show()
 
     # After we have identified the contours, we want the locations of the edges of the bounding box
     # So that we may know where the document properties are
@@ -122,7 +120,6 @@ def detect_country(img):
     countryInd = 0
     maxValue = 0
     country = ""
-    currentBorder = ""
     
     # Loop through boundary colors to compare passort color to color ranges
     for (lower, upper) in boundaries:
@@ -141,11 +138,7 @@ def detect_country(img):
         if colorSum > maxValue:
             country = countries[countryInd]
             maxValue = colorSum
-            currentBorder = border
         countryInd += 1
-
-    # plt.imshow(currentBorder)
-    # plt.show()
 
     return country
 
@@ -153,9 +146,6 @@ def detect_country(img):
 # The location of the components is univeral for all countries (EXCEPT ARSTOTZKA, which does NOT need a permit)
 # It returns binarized and thresholded images of Name, passport number, date
 def entry_permit_attr(entry_permit):
-    
-    plt.imshow(entry_permit)
-    plt.show()
 
     # Locations of attributes in entry permit
     name = entry_permit[265:295, 43:394]
@@ -163,17 +153,11 @@ def entry_permit_attr(entry_permit):
     reason = entry_permit[408:442, 200:394]
     date = entry_permit[506:535, 200:350]
 
-    plt.imshow(name)
-    plt.show()
-
     # Clean the components of noise with thresholding
     name = thresh_entry(name)
     pass_num = thresh_entry(pass_num)
     reason = thresh_entry(reason)
     date = thresh_entry(date)
-
-    plt.imshow(name)
-    plt.show()
 
     return name, pass_num, reason, date
 
@@ -300,12 +284,8 @@ def kol_passport_attr(passport):
 # Isolates components of Orbristan passport
 # The components are Name, DOB, Issuing City, Date, Passport number
 def orb_passport_attr(passport):
-    plt.imshow(passport)
-    plt.show()
 
     name = passport[280:320, 20:280]
-    plt.imshow(name)
-    plt.show()
     dob = passport[320:355, 70:230]
     iss = passport[375:405, 70:230]
     date = passport[400:430, 70:230]
@@ -318,10 +298,6 @@ def orb_passport_attr(passport):
     iss = thresh_pass(iss, True)
     date = thresh_pass(date, True)
     pass_num = thresh_pass(pass_num, True)
-
-    plt.imshow(name)
-    plt.show()
-
 
     return name, dob, iss, date, pass_num
 
@@ -473,9 +449,6 @@ def permit_seal(entry_permit):
     # Stamp will always be above a certain height on the entry permit
     cropped = entry_permit[:200,:]
 
-    plt.imshow(cropped)
-    plt.show()
-
     # Use color ranges to isolate entry permit
     color1 = np.asarray([155, 39, 35])   
     color2 = np.asarray([250, 137, 128])   
@@ -485,9 +458,6 @@ def permit_seal(entry_permit):
     kernel = np.ones((3,3), np.uint8)
     mask = cv2.erode(mask, kernel, iterations = 1)
     mask = cv2.dilate(mask, kernel, iterations = 2)
-
-    plt.imshow(mask)
-    plt.show()
 
     # Find bounding box of mask
     cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -554,11 +524,6 @@ def permit_seal(entry_permit):
     # Perform SSIM on extracted seal and both correct seals.
     score_1, _ = compare_ssim(extracted_seal_mask, resized_seal_1_mask, full=True, multichannel=True)
     score_2, _ = compare_ssim(extracted_seal_mask, resized_seal_2_mask, full=True, multichannel=True)
-
-    plt.imshow(extracted_seal_mask)
-    plt.show()
-    plt.imshow(resized_seal_2_mask)
-    plt.show()
 
     print("Score to entry seal 1: ", score_1)
     print("Score to entry seal 2: ", score_2)
@@ -636,14 +601,8 @@ def compare(img_name):
     img = cv2.imread(img_name)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-    plt.imshow(img)
-    plt.show()
-
     # Crop the table from the screenshot
     img = img[345:1040, 635:1850]
-
-    plt.imshow(img)
-    plt.show()
 
     # Coordinates of bounding box of items of the two items in the screenshot
     largeCoordTop, largeCoordBot, smallCoordTop, smallCoordBot = identify_shapes(img)
