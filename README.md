@@ -24,7 +24,7 @@ Main code
 ### BMMINI_Training
 Files to train Tesseract on BMMini font
 ### MiniKylie_Training
-Files to train Tesseract on MiniKylie fonr
+Files to train Tesseract on MiniKylie font
 ### Final_Dataset
 Contains all 69 screenshots used to test the code
 ### Seals
